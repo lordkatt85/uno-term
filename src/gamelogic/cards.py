@@ -18,7 +18,7 @@ class Deck:
         numbers = list(range(10)) + ['Reverse', 'Skip', 'Take Two']
     
         self.cards = [
-            Card(color, number)
+            Card(color, str(number))
             for color in colors
             for number in numbers
         ] + [
@@ -36,9 +36,15 @@ class Deck:
     def shuffle(self):
         random.shuffle(self.cards)
 
+    # may be for manuall debug purpose, use print(deck)
     def __repr__(self):
-        return f'Deck(cards={self.cards})'
+        string = ''
+        i = 1
+        for card in self.cards:
+            string = string + str(i) + ' -> Color: ' + card.color + ' number: ' + card.number + '\n'
+            i = i + 1
+        return string
     
 deck = Deck()
 deck.shuffle()
-print(deck.cards)
+# print(deck)
