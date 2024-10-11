@@ -36,6 +36,9 @@ class Deck:
     def shuffle(self):
         random.shuffle(self.cards)
 
+    def draw(self):
+        return self.cards.pop()
+
     # may be for manuall debug purpose, use print(deck)
     def __repr__(self):
         string = ''
