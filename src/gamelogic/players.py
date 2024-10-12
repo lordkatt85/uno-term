@@ -6,13 +6,13 @@ class Player():
         self.is_bot = is_bot
         self.hand = []
 
-    def draw_initial_cards(self,deck):
+    def draw_initial_cards(self, deck):
         for i in range(7):
-            card = gamelogic.cards.deck.draw()
+            card = deck.draw()
             self.hand.append(card)
 
     def draw_card(self, deck):
-        card = gamelogic.cards.deck.draw()
+        card = deck.draw()
         self.hand.append(card)
         return card
     
